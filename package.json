@@ -7,7 +7,7 @@
     "start": "npx ts-node index.ts",
     "watch": "npx tsc --watch --outDir ./dist",
     "watch:run": "concurrently \"npm run watch\" \"npx nodemon dist/index.js\"",
-    "build": "npx tsc index.ts --outDir ./dist",
+    "build": "npm test && npx tsc index.ts --outDir ./dist",
     "test": "env TS_NODE_COMPILER_OPTIONS='{\"module\": \"commonjs\" }' mocha -r ts-node/register 'tests/**/*.ts'"
   },
   "keywords": [],
