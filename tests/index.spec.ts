@@ -89,7 +89,7 @@ describe('calculator', () => {
         expect(res2).to.be.equal('998001')
       })
 
-      it.only('multiply by 0', () => {
+      it('multiply by 0', () => {
         const res1 = calc.multiplyTwo('9999', '0')
         expect(res1).to.equal('0')
 
@@ -97,7 +97,7 @@ describe('calculator', () => {
         expect(res2).to.equal('0')
       })
 
-      it.only('multiply by 1', () => {
+      it('multiply by 1', () => {
         const res1 = calc.multiplyTwo('9999', '1')
         expect(res1).to.equal('9999')
 
