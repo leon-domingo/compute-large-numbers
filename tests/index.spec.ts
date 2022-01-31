@@ -83,8 +83,26 @@ describe('calculator', () => {
       })
 
       it('multiply two numbers', () => {
-        const res = calc.multiplyTwo('15', '32')
-        expect(res).to.be.equal('480')
+        const res1 = calc.multiplyTwo('15', '32')
+        expect(res1).to.be.equal('480')
+        const res2 = calc.multiplyTwo('999', '999')
+        expect(res2).to.be.equal('998001')
+      })
+
+      it.only('multiply by 0', () => {
+        const res1 = calc.multiplyTwo('9999', '0')
+        expect(res1).to.equal('0')
+
+        const res2 = calc.multiplyTwo('0', '12345')
+        expect(res2).to.equal('0')
+      })
+
+      it.only('multiply by 1', () => {
+        const res1 = calc.multiplyTwo('9999', '1')
+        expect(res1).to.equal('9999')
+
+        const res2 = calc.multiplyTwo('1', '12345')
+        expect(res2).to.equal('12345')
       })
 
       it('multiply several numbers', () => {

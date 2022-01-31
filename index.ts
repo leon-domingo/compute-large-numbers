@@ -82,6 +82,10 @@ export class Calculator {
   }
 
   multiplyTwo(num1: string, num2: string): string {
+    if (num1 === '0' || num2 === '0') return '0'
+    else if (num1 === '1') return num2
+    else if (num2 === '1') return num1
+
     const revNum1 = num1.split('').reverse()
     const revNum2 = num2.split('').reverse()
 
@@ -105,13 +109,14 @@ export class Calculator {
           const [left, right] = subResult.split('')
           if (index1 === num1.length - 1) {
             // last item
-            result2.unshift(left, right)
+            result2.unshift(left, right, ...suffixZeros.split(''))
+            rest = '0'
           } else {
-            result2.unshift(right + suffixZeros)
+            result2.unshift(right, ...suffixZeros.split(''))
             rest = left
           }
         } else {
-          result2.unshift(subResult + suffixZeros)
+          result2.unshift(subResult, ...suffixZeros.split(''))
           rest = '0'
         }
       }
