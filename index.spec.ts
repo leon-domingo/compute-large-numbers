@@ -1,4 +1,4 @@
-import { Calculator } from '../index'
+import { Calculator } from './index'
 import { expect } from 'chai'
 
 describe('calculator', () => {
@@ -63,8 +63,8 @@ describe('calculator', () => {
       })
 
       it('multiple 2 single-digit numbers', () => {
-        const res1 = calc._multiplySingle('2', '4')
-        expect(res1).to.be.equal('8')
+        const res1 = calc._multiplySingle('2', '3')
+        expect(res1).to.be.equal('6')
 
         const res2 = calc._multiplySingle('7', '6')
         expect(res2).to.be.equal('42')
